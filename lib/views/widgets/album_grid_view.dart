@@ -55,6 +55,12 @@ class AlbumGridView extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Colors.white54),
             ),
+            Text(
+              album.releaseYear,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white54),
+            ),
           ],
         );
       },

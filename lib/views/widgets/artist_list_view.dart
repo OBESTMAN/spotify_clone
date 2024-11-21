@@ -27,18 +27,23 @@ class ArtistListView extends StatelessWidget {
       itemCount: artists.length,
       itemBuilder: (context, index) {
         final artist = artists[index];
-        return Row(
-          children: [
-            CircleAvatar(
-              radius: 25.0, // Adjust size as needed
-              backgroundImage: NetworkImage(artist.profileImageUrl),
-            ),
-            const SizedBox(width: 20,),
-            Text(
-              artist.name,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
-            )
-          ],
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 25.0, // Adjust size as needed
+                backgroundImage: NetworkImage(artist.imageUrl),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Text(
+                artist.name,
+                style: const TextStyle(color: Colors.white, fontSize: 16),
+              )
+            ],
+          ),
         );
       },
     );

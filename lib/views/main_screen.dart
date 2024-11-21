@@ -50,10 +50,10 @@ class _MainScreenState extends State<MainScreen> {
             // Search bar
             TextField(
               controller: _searchController,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
                 hintText: "Artists, albums...",
-                hintStyle: TextStyle(color: Colors.black),
+                hintStyle: const TextStyle(color: Colors.black),
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(

@@ -1,20 +1,18 @@
 class ArtistModel {
-  final String id;
   final String name;
-  final String profileImageUrl;
+  final String imageUrl;
 
   ArtistModel({
-    required this.id,
     required this.name,
-    required this.profileImageUrl,
+    required this.imageUrl,
   });
 
-  // Factory method to create an instance from a JSON map
   factory ArtistModel.fromJson(Map<String, dynamic> json) {
     return ArtistModel(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      profileImageUrl: json['profileImageUrl'] ?? '', // Fallback if null
+      name: json['name'],
+      imageUrl: json['images'] != null && json['images'].isNotEmpty
+          ? json['images'][0]['url']
+          : null, // Provide a default value if no image is available
     );
   }
 }

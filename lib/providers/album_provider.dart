@@ -3,7 +3,7 @@ import '../models/album_model.dart';
 import '../services/album_service.dart';
 
 class AlbumProvider with ChangeNotifier {
-  List<AlbumModel> _albums = [AlbumModel(id: "id", title: "title", artistName: "artistName", coverUrl: "https://images.unsplash.com/photo-1616663395403-2e0052b8e595?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", releaseYear: "2019")];
+  List<AlbumModel> _albums = [AlbumModel(id: "id", title: "title", artistName: "The Weeknd", coverUrl: "https://images.unsplash.com/photo-1616663395403-2e0052b8e595?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", releaseYear: "2019")];
   bool _isLoading = false;
 
   List<AlbumModel> get albums => _albums;
@@ -14,8 +14,8 @@ class AlbumProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      //_albums = await AlbumService().searchAlbums(query);
-     _albums =  [AlbumModel(id: "id", title: "title", artistName: "artistName", coverUrl: "https://images.unsplash.com/photo-1616663395403-2e0052b8e595?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", releaseYear: "releaseYear")];
+      _albums = await AlbumService().searchAlbums(query);
+     //_albums =  [AlbumModel(id: "id", title: "title", artistName: "The Weeknd", coverUrl: "https://images.unsplash.com/photo-1616663395403-2e0052b8e595?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", releaseYear: "2019")];
     } catch (error) {
       _albums = [];
       debugPrint("Error fetching albums: $error");
