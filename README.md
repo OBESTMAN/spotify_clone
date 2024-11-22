@@ -49,7 +49,7 @@ This repository is organized into the following branches:
 
 ---
 
-# If I Had More Time
+# If I had more time
 
 Given additional time, I would enhance the project with the following features:
 
