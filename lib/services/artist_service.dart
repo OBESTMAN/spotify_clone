@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:spotify_clone/models/artist_model.dart';
 import 'package:http/http.dart' as http;
 
 class ArtistService {
-  final String _clientId = '3af8e17840684c5bb3325a5e8b8e808d';
-  final String _clientSecret = 'e46b037b7f76416ca7e3ac9676f557f7';
+  final String? _clientId = dotenv.env['CLIENT_ID'];
+  final String? _clientSecret = dotenv.env['CLIENT_SECRET'];
+  final String? _apiUrl = dotenv.env['API_URL'];
 
   String? _accessToken;
   DateTime? _tokenExpiration;
@@ -53,7 +55,7 @@ class ArtistService {
 
       // Construct the search URL
       final url = Uri.parse(
-          'https://api.spotify.com/v1/search?q=$query&type=artist&limit=20');
+          '$_apiUrl$query&type=artist&limit=20');
 
       // Make the API request
       final response = await http.get(
