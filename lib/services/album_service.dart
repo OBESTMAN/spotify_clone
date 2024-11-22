@@ -67,8 +67,6 @@ class AlbumService {
         },
       );
 
-      print("response => ${response.body}");
-
       // Process the response
       if (response.statusCode == 200) {
         final Map<String, dynamic> data = json.decode(response.body);
