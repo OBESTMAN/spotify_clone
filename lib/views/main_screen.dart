@@ -68,17 +68,17 @@ class _MainScreenState extends State<MainScreen> {
                     onPressed: () {
                       _searchController.clear();
                       if (isAlbumView) {
-                        context.read<AlbumProvider>().fetchAlbums('');
+                        context.read<AlbumProvider>().fetchAlbums('', '0');
                       } else {
-                        context.read<ArtistProvider>().fetchArtists('');
+                        context.read<ArtistProvider>().fetchArtists('', '0');
                       }
                     },
                   )),
               onChanged: (query) {
                 if (isAlbumView) {
-                  context.read<AlbumProvider>().fetchAlbums(query);
+                  context.read<AlbumProvider>().fetchAlbums(query, '0');
                 } else {
-                  context.read<ArtistProvider>().fetchArtists(query);
+                  context.read<ArtistProvider>().fetchArtists(query, '0');
                 }
               },
             ),

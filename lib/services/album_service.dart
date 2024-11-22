@@ -49,15 +49,14 @@ class AlbumService {
     }
   }
 
-  Future<List<AlbumModel>> searchAlbums(String query) async {
-    print("query => $query");
+  Future<List<AlbumModel>> searchAlbums(String query, String offset) async {
     try {
       // Get the access token
       final String accessToken = await _getAccessToken();
 
       // Construct the search URL
       final url = Uri.parse(
-          '$_apiUrl$query&type=album&limit=20');
+          '$_apiUrl$query&type=album&offset=$offset&limit=20');
 
       // Make the API request
       final response = await http.get(

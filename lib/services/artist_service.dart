@@ -48,14 +48,13 @@ class ArtistService {
     }
   }
 
-  Future<List<ArtistModel>> searchArtists(String query) async {
+  Future<List<ArtistModel>> searchArtists(String query, String offset) async {
     try {
       // Get the access token
       final String accessToken = await _getAccessToken();
 
       // Construct the search URL
-      final url = Uri.parse(
-          '$_apiUrl$query&type=artist&limit=20');
+      final url = Uri.parse('$_apiUrl$query&type=artist&offset=$offset&limit=20');
 
       // Make the API request
       final response = await http.get(
