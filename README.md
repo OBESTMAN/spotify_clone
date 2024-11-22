@@ -6,6 +6,7 @@
   - **`providers`**: Manages state and handles business logic.  
   - **`services`**: Handles API calls and external services.  
   - **`views`**: Includes UI components and screens.
+  - **`.env`**: Added a .env file to keep the API_URL, CLIENT_ID and CLIENT_SECRET. (usually I don't push this file)
 
 ---
 
