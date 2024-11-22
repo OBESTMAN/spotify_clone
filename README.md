@@ -5,9 +5,23 @@
   - **`models`**: Contains data structures and classes.  
   - **`providers`**: Manages state and handles business logic.  
   - **`services`**: Handles API calls and external services.  
-  - **`views`**: Includes UI components and screens.  
+  - **`views`**: Includes UI components and screens.
 
 ---
+
+
+# Branch Structure
+
+This repository is organized into the following branches:
+
+- **`dev` Branch**  
+  The `dev` branch is the working branch where all development activities take place. It includes the complete commit history and reflects the progression of the project.
+
+- **`main` Branch**  
+  The `main` branch is the presentation branch, containing the finalized and polished version of the project. This branch is intended for review and distribution.
+
+---
+
 
 # Extra User Experience Features
 
@@ -34,18 +48,6 @@
    
   ```bash
   flutter test test/search_unit_test.dart
-
----
-
-# Branch Structure
-
-This repository is organized into the following branches:
-
-- **`dev` Branch**  
-  The `dev` branch is the working branch where all development activities take place. It includes the complete commit history and reflects the progression of the project.
-
-- **`main` Branch**  
-  The `main` branch is the presentation branch, containing the finalized and polished version of the project. This branch is intended for review and distribution.
 
 ---
 
