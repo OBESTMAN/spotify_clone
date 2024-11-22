@@ -25,7 +25,8 @@ class _MainScreenState extends State<MainScreen> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80), // Adjust height if needed
         child: Container(
-          padding: const EdgeInsets.only(top: 50, left: 16, bottom: 16), // Add padding
+          padding: const EdgeInsets.only(top: 50, left: 16, bottom: 16),
+          // Add padding
           color: Colors.black,
           child: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,16 +53,27 @@ class _MainScreenState extends State<MainScreen> {
               controller: _searchController,
               style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
-                hintText: "Artists, albums...",
-                hintStyle: const TextStyle(color: Colors.black),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide.none,
-                ),
-                prefixIcon: const Icon(CupertinoIcons.search, color: Colors.black),
-              ),
+                  hintText: isAlbumView ? "Search albums..." : "Search artists...",
+                  hintStyle: const TextStyle(color: Colors.black),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  prefixIcon:
+                      const Icon(CupertinoIcons.search, color: Colors.black),
+                  suffixIcon: IconButton(
+                    icon: const Icon(CupertinoIcons.clear, color: Colors.black),
+                    onPressed: () {
+                      _searchController.clear();
+                      if (isAlbumView) {
+                        context.read<AlbumProvider>().fetchAlbums('');
+                      } else {
+                        context.read<ArtistProvider>().fetchArtists('');
+                      }
+                    },
+                  )),
               onChanged: (query) {
                 if (isAlbumView) {
                   context.read<AlbumProvider>().fetchAlbums(query);
@@ -93,7 +105,8 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget _buildToggleButton(BuildContext context, String title, ViewOption option) {
+  Widget _buildToggleButton(
+      BuildContext context, String title, ViewOption option) {
     final isSelected = context.watch<ViewOptionProvider>().viewOption == option;
 
     return GestureDetector(
