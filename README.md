@@ -44,11 +44,22 @@ This repository is organized into the following branches:
 
 # Test Coverage
 
-- Unit tests have been implemented for the `searchAlbums` and `searchArtist` services.  
-- To run the tests, use the following command:
-   
-  ```bash
-  flutter test test/search_unit_test.dart
+### Unit Tests
+- Unit tests have been implemented for the `searchAlbums` and `searchArtist` services to verify their behavior and correctness.  
+
+### UI Tests
+- Widget tests have been added in `widget_test.dart` to ensure seamless app navigation and functionality. Key areas covered include:
+  - **SplashScreen Transition**:
+    - Verifies that the app starts on the `SplashScreen` and transitions smoothly to the `MainScreen` after the splash animation completes.
+  - **MainScreen Components**:
+    - Ensures the `MainScreen` displays key UI elements such as the search bar and toggle buttons (`Albums` and `Artists`) correctly.
+  - **View Switching**:
+    - Confirms that toggling between "Albums" and "Artists" updates the displayed content dynamically, showing the `AlbumGridView` or `ArtistListView` appropriately.
+
+### Running the Tests
+To run the tests, use the following commands:
+
+`flutter test`
 
 ---
 
