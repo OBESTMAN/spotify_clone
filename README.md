@@ -58,15 +58,12 @@ Given additional time, I would enhance the project with the following features:
 
 1. **Debounce Logic**  
    Implement a debounce mechanism to reduce the frequency of API calls during rapid user input in the search field. This would optimize performance and reduce server load.  
-   > **Note:** Implementation would be done after securing necessary permissions.  
+   > **Note:** Implementation would be done after securing necessary permissions.
+   
 
 2. **Caching with sqflite**  
-   Introduce caching using `sqflite` to enable offline access and improve usability in areas with weak or unstable internet connections.  
-
-3. **Expanded Unit Testing**  
-   Conduct more extensive unit testing to ensure better coverage and reliability. Additional tests would include:  
-   - Verifying correct UI behavior when switching between **Albums** and **Artists** tabs.  
-   - Ensuring accurate rendering of search results based on user input.  
+   Introduce caching using `sqflite` to enable offline access and improve usability in areas with weak or unstable internet connections.
+   
 
 4. **Onboarding Flow**  
    Design and implement a proper onboarding experience to guide first-time users through the app’s features, ensuring they fully understand its functionality and capabilities.
